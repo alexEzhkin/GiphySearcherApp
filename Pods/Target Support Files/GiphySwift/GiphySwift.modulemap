@@ -1,0 +1,6 @@
+framework module GiphySwift {
+  umbrella header "GiphySwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

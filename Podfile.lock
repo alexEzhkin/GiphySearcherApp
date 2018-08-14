@@ -1,0 +1,20 @@
+PODS:
+  - FLAnimatedImage (1.0.12)
+  - GiphySwift (1.0.1)
+
+DEPENDENCIES:
+  - FLAnimatedImage
+  - GiphySwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FLAnimatedImage
+    - GiphySwift
+
+SPEC CHECKSUMS:
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  GiphySwift: 5ac81e337889464da0fd4fb82c6e79ae42c12c4e
+
+PODFILE CHECKSUM: 0bfab08a5135a8d17998cc032d73f5106812e43d
+
+COCOAPODS: 1.5.3
