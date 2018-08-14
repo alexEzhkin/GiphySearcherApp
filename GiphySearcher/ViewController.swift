@@ -37,6 +37,8 @@ class CollectionViewController: UICollectionViewController {
         layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: displaySearchBar == true ? 44 : 0)
         layout.itemSize = CGSize(width: 120, height: 120)
         collectionView?.collectionViewLayout = layout
+        
+        searchBar.delegate = self
     }
     
     func requestImages(){
@@ -121,7 +123,19 @@ class CollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionElementKindSectionHeader else { return UICollectionReusableView() }
+        let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath)
+        reusableView.addSubview(searchBar)
+        searchBar.sizeToFit()
+        return reusableView
+    }
+}
 
-
+extension CollectionViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        requestImages()
+    }
 }
 
