@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Giphy.configure(with: .publicKey)
+        Giphy.configure(with: .private(key: "D6VJAuJA5eG6kXN7Vf0727xcXL7K8iJr"))
         return true
     }
 
