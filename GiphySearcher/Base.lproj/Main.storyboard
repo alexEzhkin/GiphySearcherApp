@@ -31,13 +31,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="136" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kV5-ml-pNj" customClass="FLAnimatedImageView">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kV5-ml-pNj" customClass="FLAnimatedImageView">
                                             <rect key="frame" x="0.0" y="0.0" width="136" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kV5-ml-pNj" secondAttribute="bottom" id="3QM-0a-ovY"/>
+                                    <constraint firstAttribute="trailing" secondItem="kV5-ml-pNj" secondAttribute="trailing" id="AmB-Io-jl7"/>
+                                    <constraint firstItem="kV5-ml-pNj" firstAttribute="top" secondItem="bbH-G0-Pxv" secondAttribute="top" id="UVl-G9-aXK"/>
+                                    <constraint firstItem="kV5-ml-pNj" firstAttribute="leading" secondItem="bbH-G0-Pxv" secondAttribute="leading" id="gPf-XU-qUq"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="kV5-ml-pNj" id="vXm-t7-3dV"/>
                                 </connections>

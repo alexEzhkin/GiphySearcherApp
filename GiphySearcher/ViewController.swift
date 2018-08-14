@@ -27,15 +27,23 @@ class CollectionViewController: UICollectionViewController {
     let searchBar = UISearchBar()
     var displaySearchBar = true
     
-    private let queue = DispatchQueue(label: "com.giphyswift.example", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+    private let queue = DispatchQueue(label: "GiphySearcher", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         requestImages(searchText: nil)
         
-        layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: displaySearchBar == true ? 44 : 0)
-        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: displaySearchBar == true ? 50 : 0)
+//        layout.itemSize = CGSize(width: 150, height: 150)
+        let itemSize = UIScreen.main.bounds.width/2 - 3
+        let itemSize1 = UIScreen.main.bounds.height/4 - 20
+//        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0)
+        layout.itemSize = CGSize(width: itemSize, height: itemSize1)
+        layout.minimumLineSpacing = 3
+        layout.minimumInteritemSpacing = 3
+        
         collectionView?.collectionViewLayout = layout
         
         searchBar.delegate = self
