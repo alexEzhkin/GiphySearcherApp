@@ -36,7 +36,7 @@
                                         </imageView>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="kV5-ml-pNj" secondAttribute="bottom" id="3QM-0a-ovY"/>
                                     <constraint firstAttribute="trailing" secondItem="kV5-ml-pNj" secondAttribute="trailing" id="AmB-Io-jl7"/>
