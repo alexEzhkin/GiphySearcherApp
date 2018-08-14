@@ -25,24 +25,32 @@ class CollectionViewController: UICollectionViewController {
     
     let layout = UICollectionViewFlowLayout()
     let searchBar = UISearchBar()
-    var displaySearchBar = false
+    var displaySearchBar = true
     
     private let queue = DispatchQueue(label: "com.giphyswift.example", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        requestImages()
+        requestImages(searchText: nil)
         
         layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: displaySearchBar == true ? 44 : 0)
-        layout.itemSize = CGSize(width: 120, height: 120)
+        layout.itemSize = CGSize(width: 150, height: 150)
         collectionView?.collectionViewLayout = layout
         
         searchBar.delegate = self
     }
     
-    func requestImages(){
-        Giphy.Gif.request(.trending, completionHandler: processResult)
+    func requestImages(searchText: String?){
+        if (searchText == nil || searchText == ""){
+            Giphy.Gif.request(.trending, completionHandler: processResult)
+        } else {
+            guard let searchText = searchText else {
+                displaySearchBar = true
+                return
+            }
+            Giphy.Gif.request(.search(searchText), completionHandler: processResult)
+        }
     }
     
     func processResult(result: Any) {
@@ -131,11 +139,18 @@ class CollectionViewController: UICollectionViewController {
         searchBar.sizeToFit()
         return reusableView
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == "" {
+            requestImages(searchText: searchText)
+        }
+    }
+    
 }
 
 extension CollectionViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        requestImages()
+        requestImages(searchText: searchBar.text)
     }
 }
 
