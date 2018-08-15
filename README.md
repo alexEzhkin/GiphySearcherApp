@@ -15,14 +15,14 @@ sudo gem install cocoapods
 ```
 
 Wait for it to finish before proceeding.
-Find the project directory in the Finder. This should be the folder that has the Xcode project in it.
-Type cd into the terminal, followed by a space.
-Drag and drop the project directory into the terminal window. It should now say something like this:
+Find the project directory in the Finder. This should be the folder that has the Xcode project in it. 
+Type cd into the terminal, followed by a space. 
+Drag and drop the project directory into the terminal window. Now, it should say something like this:
 ```
 cd /Users/someone/Downloads/WonderfulProject
 ```
 
-After this type pod init into the terminal
+After this, type pod init into the terminal
 ```
 pod init
 ```
@@ -48,7 +48,6 @@ Run pods to grab the GiphySwift and FLAnimatedImage framework
 ```
 pod install
 ```
-
 
 # GifSearcher App
 Clone or download the repository, setup CocoaPods and open GifSearcher.xcworkspace to check out the GifSearcher app.
