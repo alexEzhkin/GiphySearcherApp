@@ -12,15 +12,15 @@ import GiphySwift
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var showSize: UILabel!
-    @IBOutlet weak var gifView: FLAnimatedImageView!
-    var gifImage = [GiphyImage]()
+    @IBOutlet weak var showSizeLabel: UILabel!
+    @IBOutlet weak var gifImageView: FLAnimatedImageView!
+    var gifImageForView = [GiphyImage]()
     
     private let queue = DispatchQueue(label: "GiphySearcher", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imgFromGifImage = gifImage.first
+        let imgFromGifImage = gifImageForView.first
         guard let url = urlFor(image: imgFromGifImage!) else { fatalError("Unable to retrieve URL for image") }
         
         queue.async {
@@ -30,19 +30,16 @@ class DetailViewController: UIViewController {
                 OperationQueue.main.addOperation {
                     DispatchQueue.main.async {
                         let gifImage = FLAnimatedImage(animatedGIFData: data)
-                        let a = gifImage?.size.width
-                        let b = gifImage?.size.height
-                        self.gifView.frame = CGRect(x: 0, y: 0, width: a!, height: b!)
-                        self.gifView.center = (self.gifView.superview?.center)!
-                        self.showSize.text = "Size of Gif: Width: \(a!) Height: \(b!)"
-                        self.gifView.animatedImage = gifImage
+                        let widthGifImage = gifImage?.size.width
+                        let heightGifImage = gifImage?.size.height
+                        self.gifImageView.frame = CGRect(x: 0, y: 0, width: widthGifImage!, height: heightGifImage!)
+                        self.gifImageView.center = (self.gifImageView.superview?.center)!
+                        self.showSizeLabel.text = "Size of Gif: Width: \(widthGifImage!) Height: \(heightGifImage!)"
+                        self.gifImageView.animatedImage = gifImage
                     }
                 }
             }.resume()
         }
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     func urlFor(image: GiphyImage) -> URL? {
@@ -56,7 +53,6 @@ class DetailViewController: UIViewController {
             urlComponents?.scheme = "https"
             return urlComponents?.url
         }
-        
         return nil
     }
 

@@ -108,8 +108,8 @@
                         <viewLayoutGuide key="safeArea" id="Yqb-I4-gpV"/>
                     </view>
                     <connections>
-                        <outlet property="gifView" destination="HuA-EW-KGh" id="bRm-M4-ZHv"/>
-                        <outlet property="showSize" destination="hqU-8c-4Na" id="Pso-cf-DUc"/>
+                        <outlet property="gifImageView" destination="HuA-EW-KGh" id="aDT-fN-tBe"/>
+                        <outlet property="showSizeLabel" destination="hqU-8c-4Na" id="2aJ-mw-q4e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qfO-nv-YWu" userLabel="First Responder" sceneMemberID="firstResponder"/>

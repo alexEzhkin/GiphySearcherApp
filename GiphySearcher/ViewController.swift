@@ -35,17 +35,14 @@ class CollectionViewController: UICollectionViewController {
         requestImages(searchText: searchBar.text)
         
         layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: displaySearchBar == true ? 60 : 0)
-//        layout.itemSize = CGSize(width: 150, height: 150)
-        let itemSize = UIScreen.main.bounds.width/2 - 3
-        let itemSize1 = UIScreen.main.bounds.height/4 - 20
-//        let layout = UICollectionViewFlowLayout()
+        let itemWidthSize = UIScreen.main.bounds.width/2 - 3
+        let itemHeightSize = UIScreen.main.bounds.height/4 - 20
         layout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0)
-        layout.itemSize = CGSize(width: itemSize, height: itemSize1)
+        layout.itemSize = CGSize(width: itemWidthSize, height: itemHeightSize)
         layout.minimumLineSpacing = 3
         layout.minimumInteritemSpacing = 3
-        
         collectionView?.collectionViewLayout = layout
-        
+
         searchBar.delegate = self
     }
     
@@ -68,7 +65,6 @@ class CollectionViewController: UICollectionViewController {
                 self.updateUI()
             }
         }
-        
         if let result = result as? GiphyRandomRequestResult {
             if case .success(let images) = result {
                 self.images = images.result
@@ -94,7 +90,6 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseIdentifier, for: indexPath) as? ImageCell
             else { fatalError("Could not dequeue cell with reuseIdentifier: \(ImageCell.reuseIdentifier)") }
-        
         let image = images[indexPath.row]
         guard let url = urlFor(image: image) else { fatalError("Unable to retrieve URL for image") }
         
@@ -108,10 +103,8 @@ class CollectionViewController: UICollectionViewController {
                         cell.imageView.animatedImage = gifImage
                     }
                 }
-                
-                }.resume()
+            }.resume()
         }
-        
         return cell
     }
     
@@ -126,7 +119,6 @@ class CollectionViewController: UICollectionViewController {
             urlComponents?.scheme = "https"
             return urlComponents?.url
         }
-        
         return nil
     }
 
@@ -154,12 +146,13 @@ class CollectionViewController: UICollectionViewController {
             requestImages(searchText: searchText)
         }
     }
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let detVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         let imageForGif = images[indexPath.row]
-        detVC.gifImage.append(imageForGif)
+        detVC.gifImageForView.append(imageForGif)
         self.navigationController?.pushViewController(detVC, animated: true)
     }
 }
