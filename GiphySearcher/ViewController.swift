@@ -32,9 +32,9 @@ class CollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        requestImages(searchText: nil)
+        requestImages(searchText: searchBar.text)
         
-        layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: displaySearchBar == true ? 50 : 0)
+        layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: displaySearchBar == true ? 60 : 0)
 //        layout.itemSize = CGSize(width: 150, height: 150)
         let itemSize = UIScreen.main.bounds.width/2 - 3
         let itemSize1 = UIScreen.main.bounds.height/4 - 20
@@ -161,7 +161,6 @@ class CollectionViewController: UICollectionViewController {
         detVC.gifImage.append(imageForGif)
         self.navigationController?.pushViewController(detVC, animated: true)
     }
-    
 }
 
 extension CollectionViewController: UISearchBarDelegate {
