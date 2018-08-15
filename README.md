@@ -2,7 +2,7 @@
 GIF Searcher is the app that give ability to search and show GIFs. The main view of this app contains list of Trending GIFs and search bar, with help of this bar you can see GIFs that you type on search bar.
 
 # Screenshots
-![Show trending GIFs](https://user-images.githubusercontent.com/24452409/44164579-196c4300-a0cf-11e8-867b-278333afb945.png)![Show GIFs using search bar](https://user-images.githubusercontent.com/24452409/44164578-18d3ac80-a0cf-11e8-9b52-4d1f0f1371ad.png)![Show GIF and GIF size](https://user-images.githubusercontent.com/24452409/44164576-18d3ac80-a0cf-11e8-9bd4-ef5f2da4c355.png)
+![Show trending GIFs](https://user-images.githubusercontent.com/24452409/44171651-665a1480-a0e3-11e8-96cd-a0b1dfeb048a.png)![Show GIFs using search bar](https://user-images.githubusercontent.com/24452409/44171650-665a1480-a0e3-11e8-878a-d9de8f496699.png)![Show GIF and GIF size](https://user-images.githubusercontent.com/24452409/44171651-665a1480-a0e3-11e8-96cd-a0b1dfeb048a.png)
 
 # Installation
 
@@ -33,11 +33,6 @@ pod 'GiphySwift'
 pod 'FLAnimatedImage'
 ```
 
-Run pods to grab the GiphySwift and FLAnimatedImage framework
-```
-pod install
-```
-
 After all, your PodFile should be like this:
 ```
 platform :ios, '9.0'
@@ -48,6 +43,12 @@ target 'GiphySearcher' do
   pod 'FLAnimatedImage'
 end
 ```
+
+Run pods to grab the GiphySwift and FLAnimatedImage framework
+```
+pod install
+```
+
 
 # GifSearcher App
 Clone or download the repository, setup CocoaPods and open GifSearcher.xcworkspace to check out the GifSearcher app.
