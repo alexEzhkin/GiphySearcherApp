@@ -144,6 +144,7 @@ class CollectionViewController: UICollectionViewController {
         guard kind == UICollectionElementKindSectionHeader else { return UICollectionReusableView() }
         let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath)
         reusableView.addSubview(searchBar)
+        searchBar.placeholder = "Please enter the name of the gif"
         searchBar.sizeToFit()
         return reusableView
     }
