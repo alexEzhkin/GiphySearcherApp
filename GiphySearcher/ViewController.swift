@@ -153,6 +153,14 @@ class CollectionViewController: UICollectionViewController {
             requestImages(searchText: searchText)
         }
     }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let detVC = mainStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        let imageForGif = images[indexPath.row]
+        detVC.gifImage.append(imageForGif)
+        self.navigationController?.pushViewController(detVC, animated: true)
+    }
     
 }
 

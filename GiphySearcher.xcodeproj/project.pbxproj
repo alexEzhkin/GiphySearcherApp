@@ -13,6 +13,7 @@
 		FA399A95212315CD00241793 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA399A93212315CD00241793 /* Main.storyboard */; };
 		FA399A97212315CD00241793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA399A96212315CD00241793 /* Assets.xcassets */; };
 		FA399A9A212315CD00241793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA399A98212315CD00241793 /* LaunchScreen.storyboard */; };
+		FA399AB221240B7A00241793 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA399AB121240B7A00241793 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FA399A96212315CD00241793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA399A99212315CD00241793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA399A9B212315CD00241793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA399AB121240B7A00241793 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				FA399A96212315CD00241793 /* Assets.xcassets */,
 				FA399A98212315CD00241793 /* LaunchScreen.storyboard */,
 				FA399A9B212315CD00241793 /* Info.plist */,
+				FA399AB121240B7A00241793 /* DetailViewController.swift */,
 			);
 			path = GiphySearcher;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA399AB221240B7A00241793 /* DetailViewController.swift in Sources */,
 				FA399A92212315CD00241793 /* ViewController.swift in Sources */,
 				FA399A90212315CD00241793 /* AppDelegate.swift in Sources */,
 			);
