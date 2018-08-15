@@ -2,7 +2,7 @@
 GIF Searcher is the app that give ability to search and show GIFs. The main view of this app contains list of Trending GIFs and search bar, with help of this bar you can see GIFs that you type on search bar.
 
 # Screenshots
-![Show trending GIFs](https://user-images.githubusercontent.com/24452409/44171651-665a1480-a0e3-11e8-96cd-a0b1dfeb048a.png)![Show GIFs using search bar](https://user-images.githubusercontent.com/24452409/44171650-665a1480-a0e3-11e8-878a-d9de8f496699.png)![Show GIF and GIF size](https://user-images.githubusercontent.com/24452409/44171651-665a1480-a0e3-11e8-96cd-a0b1dfeb048a.png)
+![Show trending GIFs](https://user-images.githubusercontent.com/24452409/44171651-665a1480-a0e3-11e8-96cd-a0b1dfeb048a.png)![Show GIFs using search bar](https://user-images.githubusercontent.com/24452409/44171650-665a1480-a0e3-11e8-878a-d9de8f496699.png)![Show GIF and GIF size](https://user-images.githubusercontent.com/24452409/44171649-665a1480-a0e3-11e8-92eb-0d987033ee60.png)
 
 # Installation
 
